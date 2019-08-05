@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title{
+  position: absolute;
+  top: 8vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  font-size: 4em;
+}
+
+.box-area{
+  position: absolute;
+  top: 25vh;
+  left: 20vw;
+  display: grid;
+  grid-template-rows: repeat(3,130px);
+  grid-template-columns: repeat(3,130px);
+}
+
+.box {
+  border: solid .5px silver;
+  background-color: #eee;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-area{
+  position:absolute;
+  top: 20vh;
+  left: 55vw;
+}
+
+.score {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.count {
+  font-size: 2em;
+}
+
+#reset {
+  font-size: 1.4em;
+  border-radius: 25px;
+  padding: 0 10px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+#reset:hover{
+  transition: .3s;
+  background-color: rgba(10,132,255,.4);
+}
