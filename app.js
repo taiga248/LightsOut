@@ -34,149 +34,84 @@ for(let i=0; i<box.length; i++){
   }
 }*/
 
-//クリックした周囲のマスの色チェンジ
+//switch color
 box[0].addEventListener('click',()=>{
-  cZero();
-  cOne();
-  cThree();
+  sColor(0);
+  sColor(1);
+  sColor(3);
   game();
 });
 
 box[1].addEventListener('click',()=>{
-  cZero();
-  cOne();
-  cTwo();
-  cFour();
+  sColor(0);
+  sColor(1);
+  sColor(2);
+  sColor(4);
   game();
 });
 
 box[2].addEventListener('click',()=>{
-  cOne();
-  cTwo();
-  cFive();
+  sColor(1);
+  sColor(2);
+  sColor(5);
   game();
 });
 
 box[3].addEventListener('click',()=>{
-  cZero();
-  cThree();
-  cFour();
-  cSix();
+  sColor(0);
+  sColor(3);
+  sColor(4);
+  sColor(6);
   game();
 });
 
 box[4].addEventListener('click',()=>{
-  cOne();
-  cThree();
-  cFour();
-  cFive();
-  cSeven();
+  sColor(1);
+  sColor(3);
+  sColor(4);
+  sColor(5);
+  sColor(7);
   game();
 });
 
 box[5].addEventListener('click',()=>{
-  cTwo();
-  cFour();
-  cFive();
-  cEight();
+  sColor(2);
+  sColor(4);
+  sColor(5);
+  sColor(8);
   game();
 });
 
 box[6].addEventListener('click',()=>{
-  cThree();
-  cSix();
-  cSeven();
+  sColor(3);
+  sColor(6);
+  sColor(7);
   game();
 });
 
 box[7].addEventListener('click',()=>{
-  cFour();
-  cSix();
-  cSeven();
-  cEight();
+  sColor(4);
+  sColor(6);
+  sColor(7);
+  sColor(8);
   game();
 });
 
 box[8].addEventListener('click',()=>{
-  cFive();
-  cSeven();
-  cEight();
+  sColor(5);
+  sColor(7);
+  sColor(8);
   game();
 });
 
-function cZero(){
-  if(flag[0] === false){
-    box[0].style.backgroundColor = "red";
+function sColor(n){
+  if(flag[n] === false){
+    box[n].style.backgroundColor = "red";
   }else{
-    box[0].style.backgroundColor = "#eee";
+    box[n].style.backgroundColor = "#eee";
   }
-  flag[0] = !flag[0];
+  flag[n] = !flag[n];
 }
-function cOne(){
-  if(flag[1] === false){
-    box[1].style.backgroundColor = "red";
-  }else{
-    box[1].style.backgroundColor = "#eee";
-  }
-  flag[1] = !flag[1];
-}
-function cTwo(){
-  if(flag[2] === false){
-    box[2].style.backgroundColor = "red";
-  }else{
-    box[2].style.backgroundColor = "#eee";
-  }
-  flag[2] = !flag[2];
-}
-function cThree(){
-  if(flag[3] === false){
-    box[3].style.backgroundColor = "red";
-  }else{
-    box[3].style.backgroundColor = "#eee";
-  }
-  flag[3] = !flag[3];
-}
-function cFour(){
-  if(flag[4] === false){
-    box[4].style.backgroundColor = "red";
-  }else{
-    box[4].style.backgroundColor = "#eee";
-  }
-  flag[4] = !flag[4];
-}
-function cFive(){
-  if(flag[5] === false){
-    box[5].style.backgroundColor = "red";
-  }else{
-    box[5].style.backgroundColor = "#eee";
-  }
-  flag[5] = !flag[5];
-}
-function cSix(){
-  if(flag[6] === false){
-    box[6].style.backgroundColor = "red";
-  }else{
-    box[6].style.backgroundColor = "#eee";
-  }
-  flag[6] = !flag[6];
-}
-function cSeven(){
-  if(flag[7] === false){
-    box[7].style.backgroundColor = "red";
-  }else{
-    box[7].style.backgroundColor = "#eee";
-  }
-  flag[7] = !flag[7];
-}
-function cEight(){
-  if(flag[8] === false){
-    box[8].style.backgroundColor = "red";
-  }else{
-    box[8].style.backgroundColor = "#eee";
-  }
-  flag[8] = !flag[8];
-}
-
 
 //TODO クリア表示できない
 function game(){
