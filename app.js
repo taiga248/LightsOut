@@ -35,100 +35,78 @@ for(let i=0; i<box.length; i++){
 }*/
 
 
-//   -- 0 --
 box[0].addEventListener('click',()=>{
-  if(flag[0] === false){
-    box[0].style.backgroundColor = "red";
-    flag[0] = !flag[0];
-  }else{
-    box[0].style.backgroundColor = "#eee";
-    flag[0] = !flag[0];
-  }
-
-  if(flag[1] === false){
-    box[1].style.backgroundColor = "red";
-    flag[1] = !flag[1];
-  }else{
-    box[1].style.backgroundColor = "#eee";
-    flag[1] = !flag[1];
-  }
-
-  if(flag[3] === false){
-    box[3].style.backgroundColor = "red";
-    flag[3] = !flag[3];
-  }else{
-    box[3].style.backgroundColor = "#eee";
-    flag[3] = !flag[3];
-  }
+  cZero();
+  cOne();
+  cThree();
   game();
 });
 
-//   -- 1 --
 box[1].addEventListener('click',()=>{
-  if(flag[0] === false){
-    box[0].style.backgroundColor = "red";
-    flag[0] = !flag[0];
-  }else{
-    box[0].style.backgroundColor = "#eee";
-    flag[0] = !flag[0];
-  }
-
-  if(flag[1] === false){
-    box[1].style.backgroundColor = "red";
-    flag[1] = !flag[1];
-  }else{
-    box[1].style.backgroundColor = "#eee";
-    flag[1] = !flag[1];
-  }
-
-  if(flag[2] === false){
-    box[2].style.backgroundColor = "red";
-    flag[2] = !flag[2];
-  }else{
-    box[2].style.backgroundColor = "#eee";
-    flag[2] = !flag[2];
-  }
-
-  if(flag[4] === false){
-    box[4].style.backgroundColor = "red";
-    flag[4] = !flag[4];
-  }else{
-    box[4].style.backgroundColor = "#eee";
-    flag[4] = !flag[4];
-  }
+  cZero();
+  cOne();
+  cTwo();
+  cFour();
   game();
 });
 
-//   -- 2 --
 box[2].addEventListener('click',()=>{
-  if(flag[1] === false){
-    box[1].style.backgroundColor = "red";
-    flag[1] = !flag[1];
-  }else{
-    box[1].style.backgroundColor = "#eee";
-    flag[1] = !flag[1];
-  }
-
-  if(flag[2] === false){
-    box[2].style.backgroundColor = "red";
-    flag[2] = !flag[2];
-  }else{
-    box[2].style.backgroundColor = "#eee";
-    flag[2] = !flag[2];
-  }
-
-  if(flag[5] === false){
-    box[5].style.backgroundColor = "red";
-    flag[5] = !flag[5];
-  }else{
-    box[5].style.backgroundColor = "#eee";
-    flag[5] = !flag[5];
-  }
+  cOne();
+  cTwo();
+  cFive();
   game();
 });
 
-//   -- 3 --
 box[3].addEventListener('click',()=>{
+  cZero();
+  cThree();
+  cFour();
+  cSix();
+  game();
+});
+
+box[4].addEventListener('click',()=>{
+  cOne();
+  cThree();
+  cFour();
+  cFive();
+  cSeven();
+  game();
+});
+
+box[5].addEventListener('click',()=>{
+  cTwo();
+  cFour();
+  cFive();
+  cEight();
+  game();
+});
+
+box[6].addEventListener('click',()=>{
+  cThree();
+  cSix();
+  cSeven();
+  game();
+});
+
+box[7].addEventListener('click',()=>{
+  cFour();
+  cSix();
+  cSeven();
+  cEight();
+  game();
+});
+
+box[8].addEventListener('click',()=>{
+  cFive();
+  cSeven();
+  cEight();
+  game();
+});
+
+
+
+function cZero(){
   if(flag[0] === false){
     box[0].style.backgroundColor = "red";
     flag[0] = !flag[0];
@@ -136,35 +114,8 @@ box[3].addEventListener('click',()=>{
     box[0].style.backgroundColor = "#eee";
     flag[0] = !flag[0];
   }
-
-  if(flag[3] === false){
-    box[3].style.backgroundColor = "red";
-    flag[3] = !flag[3];
-  }else{
-    box[3].style.backgroundColor = "#eee";
-    flag[3] = !flag[3];
-  }
-
-  if(flag[4] === false){
-    box[4].style.backgroundColor = "red";
-    flag[4] = !flag[4];
-  }else{
-    box[4].style.backgroundColor = "#eee";
-    flag[4] = !flag[4];
-  }
-
-  if(flag[6] === false){
-    box[6].style.backgroundColor = "red";
-    flag[6] = !flag[6];
-  }else{
-    box[6].style.backgroundColor = "#eee";
-    flag[6] = !flag[6];
-  }
-  game();
-});
-
-//   -- 4 --
-box[4].addEventListener('click',()=>{
+}
+function cOne(){
   if(flag[1] === false){
     box[1].style.backgroundColor = "red";
     flag[1] = !flag[1];
@@ -172,43 +123,8 @@ box[4].addEventListener('click',()=>{
     box[1].style.backgroundColor = "#eee";
     flag[1] = !flag[1];
   }
-
-  if(flag[3] === false){
-    box[3].style.backgroundColor = "red";
-    flag[3] = !flag[3];
-  }else{
-    box[3].style.backgroundColor = "#eee";
-    flag[3] = !flag[3];
-  }
-  
-  if(flag[4] === false){
-    box[4].style.backgroundColor = "red";
-    flag[4] = !flag[4];
-  }else{
-    box[4].style.backgroundColor = "#eee";
-    flag[4] = !flag[4];
-  }
-
-  if(flag[5] === false){
-    box[5].style.backgroundColor = "red";
-    flag[5] = !flag[5];
-  }else{
-    box[5].style.backgroundColor = "#eee";
-    flag[5] = !flag[5];
-  }
-
-  if(flag[7] === false){
-    box[7].style.backgroundColor = "red";
-    flag[7] = !flag[7];
-  }else{
-    box[7].style.backgroundColor = "#eee";
-    flag[7] = !flag[7];
-  }
-  game();
-});
-
-//   -- 5 --
-box[5].addEventListener('click',()=>{
+}
+function cTwo(){
   if(flag[2] === false){
     box[2].style.backgroundColor = "red";
     flag[2] = !flag[2];
@@ -216,36 +132,8 @@ box[5].addEventListener('click',()=>{
     box[2].style.backgroundColor = "#eee";
     flag[2] = !flag[2];
   }
-
-  if(flag[4] === false){
-    box[4].style.backgroundColor = "red";
-    flag[4] = !flag[4];
-  }else{
-    box[4].style.backgroundColor = "#eee";
-    flag[4] = !flag[4];
-  }
-
-  if(flag[5] === false){
-    box[5].style.backgroundColor = "red";
-    flag[5] = !flag[5];
-  }else{
-    box[5].style.backgroundColor = "#eee";
-    flag[5] = !flag[5];
-  }
-
-  if(flag[8] === false){
-    box[8].style.backgroundColor = "red";
-    flag[8] = !flag[8];
-  }else{
-    box[8].style.backgroundColor = "#eee";
-    flag[8] = !flag[8];
-  }
-  game();
-});
-
-//   -- 6 --
-box[6].addEventListener('click',()=>{
-
+}
+function cThree(){
   if(flag[3] === false){
     box[3].style.backgroundColor = "red";
     flag[3] = !flag[3];
@@ -253,27 +141,8 @@ box[6].addEventListener('click',()=>{
     box[3].style.backgroundColor = "#eee";
     flag[3] = !flag[3];
   }
-
-  if(flag[6] === false){
-    box[6].style.backgroundColor = "red";
-    flag[6] = !flag[6];
-  }else{
-    box[6].style.backgroundColor = "#eee";
-    flag[6] = !flag[6];
-  }
-
-  if(flag[7] === false){
-    box[7].style.backgroundColor = "red";
-    flag[7] = !flag[7];
-  }else{
-    box[7].style.backgroundColor = "#eee";
-    flag[7] = !flag[7];
-  }
-  game();
-});
-
-//   -- 7 --
-box[7].addEventListener('click',()=>{
+}
+function cFour(){
   if(flag[4] === false){
     box[4].style.backgroundColor = "red";
     flag[4] = !flag[4];
@@ -281,35 +150,8 @@ box[7].addEventListener('click',()=>{
     box[4].style.backgroundColor = "#eee";
     flag[4] = !flag[4];
   }
-
-  if(flag[6] === false){
-    box[6].style.backgroundColor = "red";
-    flag[6] = !flag[6];
-  }else{
-    box[6].style.backgroundColor = "#eee";
-    flag[6] = !flag[6];
-  }
-
-  if(flag[7] === false){
-    box[7].style.backgroundColor = "red";
-    flag[7] = !flag[7];
-  }else{
-    box[7].style.backgroundColor = "#eee";
-    flag[7] = !flag[7];
-  }
-
-  if(flag[8] === false){
-    box[8].style.backgroundColor = "red";
-    flag[8] = !flag[8];
-  }else{
-    box[8].style.backgroundColor = "#eee";
-    flag[8] = !flag[8];
-  }
-  game();
-});
-
-//   -- 8 --
-box[8].addEventListener('click',()=>{
+}
+function cFive(){
   if(flag[5] === false){
     box[5].style.backgroundColor = "red";
     flag[5] = !flag[5];
@@ -317,7 +159,17 @@ box[8].addEventListener('click',()=>{
     box[5].style.backgroundColor = "#eee";
     flag[5] = !flag[5];
   }
-
+}
+function cSix(){
+  if(flag[6] === false){
+    box[6].style.backgroundColor = "red";
+    flag[6] = !flag[6];
+  }else{
+    box[6].style.backgroundColor = "#eee";
+    flag[6] = !flag[6];
+  }
+}
+function cSeven(){
   if(flag[7] === false){
     box[7].style.backgroundColor = "red";
     flag[7] = !flag[7];
@@ -325,7 +177,8 @@ box[8].addEventListener('click',()=>{
     box[7].style.backgroundColor = "#eee";
     flag[7] = !flag[7];
   }
-
+}
+function cEight(){
   if(flag[8] === false){
     box[8].style.backgroundColor = "red";
     flag[8] = !flag[8];
@@ -333,8 +186,8 @@ box[8].addEventListener('click',()=>{
     box[8].style.backgroundColor = "#eee";
     flag[8] = !flag[8];
   }
-  game();
-});
+}
+
 
 //TODO クリア表示できない
 function game(){
