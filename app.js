@@ -34,7 +34,7 @@ for(let i=0; i<box.length; i++){
   }
 }*/
 
-
+//クリックした周囲のマスの色チェンジ
 box[0].addEventListener('click',()=>{
   cZero();
   cOne();
@@ -104,88 +104,77 @@ box[8].addEventListener('click',()=>{
   game();
 });
 
-
-
 function cZero(){
   if(flag[0] === false){
     box[0].style.backgroundColor = "red";
-    flag[0] = !flag[0];
   }else{
     box[0].style.backgroundColor = "#eee";
-    flag[0] = !flag[0];
   }
+  flag[0] = !flag[0];
 }
 function cOne(){
   if(flag[1] === false){
     box[1].style.backgroundColor = "red";
-    flag[1] = !flag[1];
   }else{
     box[1].style.backgroundColor = "#eee";
-    flag[1] = !flag[1];
   }
+  flag[1] = !flag[1];
 }
 function cTwo(){
   if(flag[2] === false){
     box[2].style.backgroundColor = "red";
-    flag[2] = !flag[2];
   }else{
     box[2].style.backgroundColor = "#eee";
-    flag[2] = !flag[2];
   }
+  flag[2] = !flag[2];
 }
 function cThree(){
   if(flag[3] === false){
     box[3].style.backgroundColor = "red";
-    flag[3] = !flag[3];
   }else{
     box[3].style.backgroundColor = "#eee";
-    flag[3] = !flag[3];
   }
+  flag[3] = !flag[3];
 }
 function cFour(){
   if(flag[4] === false){
     box[4].style.backgroundColor = "red";
-    flag[4] = !flag[4];
   }else{
     box[4].style.backgroundColor = "#eee";
-    flag[4] = !flag[4];
   }
+  flag[4] = !flag[4];
 }
 function cFive(){
   if(flag[5] === false){
     box[5].style.backgroundColor = "red";
-    flag[5] = !flag[5];
   }else{
     box[5].style.backgroundColor = "#eee";
-    flag[5] = !flag[5];
   }
+  flag[5] = !flag[5];
 }
 function cSix(){
   if(flag[6] === false){
     box[6].style.backgroundColor = "red";
-    flag[6] = !flag[6];
   }else{
     box[6].style.backgroundColor = "#eee";
-    flag[6] = !flag[6];
   }
+  flag[6] = !flag[6];
 }
 function cSeven(){
   if(flag[7] === false){
     box[7].style.backgroundColor = "red";
-    flag[7] = !flag[7];
   }else{
     box[7].style.backgroundColor = "#eee";
-    flag[7] = !flag[7];
   }
+  flag[7] = !flag[7];
 }
 function cEight(){
   if(flag[8] === false){
     box[8].style.backgroundColor = "red";
-    flag[8] = !flag[8];
   }else{
     box[8].style.backgroundColor = "#eee";
-    flag[8] = !flag[8];
   }
+  flag[8] = !flag[8];
 }
 
 
