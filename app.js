@@ -13,7 +13,7 @@ const random = Math.floor( Math.random() * 2 );
 //let reset = document.getElementById('reset');
 const Fire = document.getElementById('fire');
 let fire = 0;
-let cnti = 0;
+let cnt = 0;
 
 const box  = [
   zero,  one,   two, 
@@ -136,12 +136,13 @@ function game(){
 }
 
 /* TODO 表のリセット
+reset.addEventListener('click',()=>{
+  Reset();
+});
+
 function Reset(){
   for(let i=0; i<box.length; i++){
     box[i]=false;
   }
 }
-reset.addEventListener('click',()=>{
-  Reset();
-});
 */
