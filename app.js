@@ -65,7 +65,7 @@ for(let i=0; i<box.length; i++){
   });
 }
 
-// Switch Color
+// Switch Color and Check
 function sColor(n){
   for(let i=0; i<n.length; i++){
     if(flag[n[i]] === false){
@@ -92,14 +92,13 @@ function game(){
   red_cnt = 0;
 }
 
-/* TODO 表のリセット
-reset.addEventListener('click',()=>{
-  Reset();
-});
-
-function Reset(){
+reset.addEventListener('click', ()=>{
   for(let i=0; i<box.length; i++){
-    box[i]=false;
+    flag[i] = false;
+    box[i].style.backgroundColor = "#eee";
   }
-}
-*/
+  click_cnt = 0;
+  counter.innerHTML= "count : " + click_cnt;
+  clear_mess.innerHTML = "";
+  red_cnt = 0;
+});
