@@ -9,130 +9,87 @@ const six   = document.getElementById('box-6');
 const seven = document.getElementById('box-7');
 const eight = document.getElementById('box-8');
 
-const random = Math.floor( Math.random() * 2 );
-//let reset = document.getElementById('reset');
-const Fire = document.getElementById('fire');
-let fire = 0;
-let cnt = 0;
+const clear_mess = document.getElementById('clear_mess');
+const counter = document.getElementById('count');
+const reset = document.getElementById('reset');
+let click_cnt = 0;
+let red_cnt = 0;
 
 const box  = [
   zero,  one,   two, 
   three, four,  five, 
   six,   seven, eight,
 ];
-let flag =
-  //[true,true,true,true,true,true,true,true,true,];
-  [false,false,false,false,false,false,false,false,false,];
 
-/* TODO 初期値乱数配置
+let flag = [false,false,false,false,false,false,false,false,false];
+
 for(let i=0; i<box.length; i++){
-  if(random === 1){
-    flag[i] = true;
-  }else(random === 0){
-    flag[i] = false;
+  box[i].addEventListener("click", ()=>{
+    switch (i){
+      case 0:
+        sColor([0,1,3]);
+        break;
+
+      case 1:
+        sColor([0,1,2,4]);
+        break;
+
+      case 2:
+        sColor([1,2,5]);
+        break;
+
+      case 3:
+        sColor([0,3,4,6]);
+        break;
+
+      case 4:
+        sColor([1,3,4,5,7]);
+        break;
+
+      case 5:
+        sColor([2,4,5,8]);
+        break;
+
+      case 6:
+        sColor([3,6,7]);
+        break;
+
+      case 7:
+        sColor([4,6,7,8]);
+        break;
+
+      case 8:
+        sColor([5,7,8]);
+        break;
+    }
+  });
+}
+
+// Switch Color
+function sColor(n){
+  for(let i=0; i<n.length; i++){
+    if(flag[n[i]] === false){
+      box[n[i]].style.backgroundColor = "red";
+    }else{
+      box[n[i]].style.backgroundColor = "#eee";
+    }
+    flag[n[i]] = !flag[n[i]];
   }
-}*/
-
-// Switch color
-box[0].addEventListener('click',()=>{
-  sColor(0);
-  sColor(1);
-  sColor(3);
-  check();
-});
-
-box[1].addEventListener('click',()=>{
-  sColor(0);
-  sColor(1);
-  sColor(2);
-  sColor(4);
-  check();
-});
-
-box[2].addEventListener('click',()=>{
-  sColor(1);
-  sColor(2);
-  sColor(5);
-  check();
-});
-
-box[3].addEventListener('click',()=>{
-  sColor(0);
-  sColor(3);
-  sColor(4);
-  sColor(6);
-  check();
-});
-
-box[4].addEventListener('click',()=>{
-  sColor(1);
-  sColor(3);
-  sColor(4);
-  sColor(5);
-  sColor(7);
-  check();
-});
-
-box[5].addEventListener('click',()=>{
-  sColor(2);
-  sColor(4);
-  sColor(5);
-  sColor(8);
-  check();
-});
-
-box[6].addEventListener('click',()=>{
-  sColor(3);
-  sColor(6);
-  sColor(7);
-  check();
-});
-
-box[7].addEventListener('click',()=>{
-  sColor(4);
-  sColor(6);
-  sColor(7);
-  sColor(8);
-  check();
-});
-
-box[8].addEventListener('click',()=>{
-  sColor(5);
-  sColor(7);
-  sColor(8);
-  check();
-});
-
-function check(){
-  count();
+  clickCount();
   game();
 }
 
-function sColor(n){
-  if(flag[n] === false){
-    box[n].style.backgroundColor = "red";
-  }else{
-    box[n].style.backgroundColor = "#eee";
-  }
-  flag[n] = !flag[n];
+function clickCount(){
+  click_cnt++;
+  counter.innerHTML= "count : " + click_cnt;
 }
 
-function count(){
-  fire++;
-  Fire.innerHTML= "count : "+fire;
-}
-
-//TODO クリア表示できない
 function game(){
   for(let i=0; i<box.length; i++){
-    if(flag[i] === true){
-      cnt++;
-    }
-    if(cnt === 9){
-      alert("Game");  
-    }
+    flag[i] === true ? red_cnt++ : "";
+    if(red_cnt === 9) clear_mess.innerHTML = "GAME CLEAR！";  
   }
-  cnt=0;
+  red_cnt = 0;
 }
 
 /* TODO 表のリセット
