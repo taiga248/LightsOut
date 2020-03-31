@@ -12,8 +12,11 @@ const eight = document.getElementById('box-8');
 const clear_mess = document.getElementById('clear_mess');
 const counter = document.getElementById('count');
 const reset = document.getElementById('reset');
+const time = document.getElementById('time');
 let click_cnt = 0;
 let red_cnt = 0;
+let startTime;
+let timeoutId;
 
 const box  = [
   zero,  one,   two, 
@@ -80,14 +83,31 @@ function sColor(n){
 }
 
 function clickCount(){
+  if(click_cnt === 0){
+    startTime = Date.now();
+    timer();
+  }
   click_cnt++;
   counter.innerHTML= "count : " + click_cnt;
+}
+
+function timer() {
+  const date = new Date(Date.now() - startTime);
+  const min = String(date.getMinutes()).padStart(2, '0');
+  const sec = String(date.getSeconds()).padStart(2, '0');
+  time.innerHTML = "Time : "+ min +":"+ sec;
+  timeoutId = setTimeout(() => {
+    timer();
+  }, 10);
 }
 
 function game(){
   for(let i=0; i<box.length; i++){
     flag[i] === true ? red_cnt++ : "";
-    if(red_cnt === 9) clear_mess.innerHTML = "GAME CLEAR！";  
+    if(red_cnt === 9){
+      clear_mess.innerHTML = "GAME CLEAR！";  
+      clearTimeout(timeoutId);
+    }
   }
   red_cnt = 0;
 }
@@ -99,6 +119,8 @@ reset.addEventListener('click', ()=>{
   }
   click_cnt = 0;
   counter.innerHTML= "count : " + click_cnt;
+  clearTimeout(timeoutId);
+  time.innerHTML = "Time : 00:00";
   clear_mess.innerHTML = "";
   red_cnt = 0;
 });
