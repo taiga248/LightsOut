@@ -13,21 +13,36 @@ const clear_mess = document.getElementById('clear_mess');
 const counter = document.getElementById('count');
 const reset = document.getElementById('reset');
 const time = document.getElementById('time');
+
 let click_cnt = 0;
 let red_cnt = 0;
 let startTime;
 let timeoutId;
+let flag = [];
+let tf;
 
-const box  = [
+const box = [
   zero,  one,   two, 
   three, four,  five, 
   six,   seven, eight,
 ];
 
-let flag = [false,false,false,false,false,false,false,false,false];
+(function (){
+  randomColor();
+})();
 
+/* ランダム配置 */
+function randomColor(){
+  for(let i=0; i<box.length; i++){
+    Math.floor(Math.random()*10) >=5 ? tf = true : tf = false;
+    flag.push(tf);
+    flag[i] ? box[i].style.backgroundColor = "red" : box[i].style.backgroundColor = "#eee";
+  }
+}
+
+/* それぞれ押下された時の処理 */
 for(let i=0; i<box.length; i++){
-  box[i].addEventListener("click", ()=>{
+  box[i].addEventListener("click", () => {
     switch (i){
       case 0:
         sColor([0,1,3]);
@@ -68,7 +83,7 @@ for(let i=0; i<box.length; i++){
   });
 }
 
-// Switch Color and Check
+/* Switch Color and Check */
 function sColor(n){
   for(let i=0; i<n.length; i++){
     if(flag[n[i]] === false){
@@ -82,6 +97,7 @@ function sColor(n){
   game();
 }
 
+/* 押下をカウント */
 function clickCount(){
   if(click_cnt === 0){
     startTime = Date.now();
@@ -91,7 +107,8 @@ function clickCount(){
   counter.innerHTML= "count : " + click_cnt;
 }
 
-function timer() {
+/* 時間計測 */
+function timer(){
   const date = new Date(Date.now() - startTime);
   const min = String(date.getMinutes()).padStart(2, '0');
   const sec = String(date.getSeconds()).padStart(2, '0');
@@ -101,6 +118,7 @@ function timer() {
   }, 10);
 }
 
+/* クリアしたかどうかの判定 */
 function game(){
   for(let i=0; i<box.length; i++){
     flag[i] === true ? red_cnt++ : "";
@@ -112,15 +130,14 @@ function game(){
   red_cnt = 0;
 }
 
-reset.addEventListener('click', ()=>{
-  for(let i=0; i<box.length; i++){
-    flag[i] = false;
-    box[i].style.backgroundColor = "#eee";
-  }
-  click_cnt = 0;
-  counter.innerHTML= "count : " + click_cnt;
+/* リセット処理 */
+reset.addEventListener('click', () => {
   clearTimeout(timeoutId);
-  time.innerHTML = "Time : 00:00";
-  clear_mess.innerHTML = "";
+  flag = [];
+  randomColor();
   red_cnt = 0;
+  click_cnt = 0;
+  clear_mess.innerHTML = "";
+  time.innerHTML = "Time : 00:00";
+  counter.innerHTML= "count : " + click_cnt;
 });
