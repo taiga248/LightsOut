@@ -86,7 +86,7 @@ for(let i=0; i<box.length; i++){
 /* Switch Color and Check */
 function sColor(n){
   for(let i=0; i<n.length; i++){
-    if(flag[n[i]] === false){
+    if(!flag[n[i]]){
       box[n[i]].style.backgroundColor = "red";
     }else{
       box[n[i]].style.backgroundColor = "#eee";
@@ -121,7 +121,7 @@ function timer(){
 /* クリアしたかどうかの判定 */
 function game(){
   for(let i=0; i<box.length; i++){
-    flag[i] === true ? red_cnt++ : "";
+    flag[i] ? red_cnt++ : "";
     if(red_cnt === 9){
       clear_mess.innerHTML = "GAME CLEAR！";  
       clearTimeout(timeoutId);
