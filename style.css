@@ -1,57 +1,105 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
-.title{
-  position: absolute;
-  top: 8vh;
-  left: 50vw;
-  transform: translate(-50%,-50%);
-  font-size: 4em;
+@media screen and (max-width:559px) { 
+  .title{
+    margin: 70px 0 30px 0;
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  .box-area{
+    display: grid;
+    grid-template-rows: repeat(3,100px);
+    grid-template-columns: repeat(3,100px);
+    justify-content: center;
+  }
+  
+  .box{
+    border: solid .5px silver;
+    background-color: #eee;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .score-area{
+    position: relative;
+    left: 15vw;
+    font-size: 1.2em;
+    margin: 30px 0;
+  }
+
+  .score{
+    font-size: 1.2em;
+    text-transform: uppercase;
+  }
+
+  #reset {
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 1vh;
+    text-transform: uppercase;
+  }
 }
 
-.box-area{
-  position: absolute;
-  top: 25vh;
-  left: 20vw;
-  display: grid;
-  grid-template-rows: repeat(3,130px);
-  grid-template-columns: repeat(3,130px);
-}
+@media screen and (min-width:560px) {
+  .title{
+    margin: 100px 0 40px 0;
+    text-align: center;
+    font-size: 4em;
+  }
 
-.box {
-  border: solid .5px silver;
-  background-color: #eee;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  #container{
+    display: flex;
+    justify-content: center;
+  }
 
-.score-area{
-  position:absolute;
-  top: 20vh;
-  left: 55vw;
-}
+  .box-area{
+    display: grid;
+    grid-template-rows: repeat(3,130px);
+    grid-template-columns: repeat(3,130px);
+  }
+  
+  .box {
+    border: solid .5px silver;
+    background-color: #eee;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .score-area{
+    margin: 0 8vw;
+  }
+  
+  .score {
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 1vh 0;
+  }
+  
+  .count {
+    font-size: 2em;
+    margin: 1vh 0;
+  }
+  
+  #reset {
+    font-size: 1.4em;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 1vh 0;
+    text-transform: uppercase;
+  }
 
-.score {
-  font-size: 3em;
-  text-transform: uppercase;
-}
-
-.count {
-  font-size: 2em;
-}
-
-#reset {
-  font-size: 1.4em;
-  border-radius: 25px;
-  padding: 0 10px;
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-#reset:hover{
-  transition: .3s;
-  background-color: rgba(10,132,255,.4);
+  #reset:hover{
+    transition: .2s;
+    color: #fff;
+    background-color: rgba(10,132,255,.4);
+  }
 }
