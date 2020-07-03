@@ -18,7 +18,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "https://taiga248.github.io/LightsOut/",
   "display": "standalone",
   "background_color": "#BBB",
   "theme_color": "#FFF"
