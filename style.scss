@@ -1,7 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  // outline: solid red 1px;
 }
+$boxWidth: 130px;
+$scoreWidth: 300px;
 
 #container {
   width: 80vw;
@@ -52,30 +55,35 @@
 }
 
 @media screen and (min-width: 560px) {
+  .content {
+    display: flex;
+    width: $boxWidth * 3 + $scoreWidth;
+    margin: 0 auto;
+  }
   .title {
     font-size: 48px;
-    margin: 40px auto;
+    margin: 8vh auto;
     text-align: center;
     font-weight: 200;
   }
   .box-area {
     display: grid;
     justify-content: center;
-    grid-template-rows: repeat(3, 130px);
-    grid-template-columns: repeat(3, 130px);
+    grid-template-rows: repeat(3, $boxWidth);
+    grid-template-columns: repeat(3, $boxWidth);
+    width: $boxWidth * 3;
     &__item {
       display: flex;
       align-items: center;
       justify-content: center;
       border: solid 0.5px silver;
       background-color: #eee;
-      margin: 5px;
+      margin: 4px;
     }
   }
   .score-area {
-    margin: 0 auto;
     padding: 24px 32px;
-    width: 20vw;
+    width: $scoreWidth;
     &__title {
       font-size: 32px;
       font-weight: 200;

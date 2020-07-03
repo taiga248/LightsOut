@@ -63,9 +63,16 @@
 }
 
 @media screen and (min-width: 560px) {
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 690px;
+    margin: 0 auto;
+  }
   .title {
     font-size: 48px;
-    margin: 40px auto;
+    margin: 8vh auto;
     text-align: center;
     font-weight: 200;
   }
@@ -79,6 +86,7 @@
         grid-template-rows: repeat(3, 130px);
     -ms-grid-columns: (130px)[3];
         grid-template-columns: repeat(3, 130px);
+    width: 390px;
   }
   .box-area__item {
     display: -webkit-box;
@@ -92,12 +100,11 @@
             justify-content: center;
     border: solid 0.5px silver;
     background-color: #eee;
-    margin: 5px;
+    margin: 4px;
   }
   .score-area {
-    margin: 0 auto;
     padding: 24px 32px;
-    width: 20vw;
+    width: 300px;
   }
   .score-area__title {
     font-size: 32px;
