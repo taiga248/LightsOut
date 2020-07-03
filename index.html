@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Light Out</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <p class="title">Lights Out</p>
-  <div id="container">
-    <div class="box-area">
-      <div class="box" id="box-0">0</div>
-      <div class="box" id="box-1">1</div>
-      <div class="box" id="box-2">2</div>
-      <div class="box" id="box-3">3</div>
-      <div class="box" id="box-4">4</div>
-      <div class="box" id="box-5">5</div>
-      <div class="box" id="box-6">6</div>
-      <div class="box" id="box-7">7</div>
-      <div class="box" id="box-8">8</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Out</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="title">Lights Out</h1>
+      <div class="box-area">
+        <div class="box-area__item" id="box-0">0</div>
+        <div class="box-area__item" id="box-1">1</div>
+        <div class="box-area__item" id="box-2">2</div>
+        <div class="box-area__item" id="box-3">3</div>
+        <div class="box-area__item" id="box-4">4</div>
+        <div class="box-area__item" id="box-5">5</div>
+        <div class="box-area__item" id="box-6">6</div>
+        <div class="box-area__item" id="box-7">7</div>
+        <div class="box-area__item" id="box-8">8</div>
+      </div>
+      <div class="score-area">
+        <h2 class="score-area__title">Score</h2>
+        <p class="score-area__count" id="time">Time : 00:00</p>
+        <p class="score-area__count" id="count">Count : 0</p>
+        <button class="score-area__resetBtn" id="reset">reset</button>
+        <p class="score-area__mess" id="clear_mess"></p>
+      </div>
     </div>
-    <div class="score-area">
-      <p class="score">score</p>
-      <p class="count" id="time">Time : 00:00</p>
-      <p class="count" id="count">Count : 0</p>
-      <button id="reset">reset</button>
-      <p id="clear_mess"></p>
-    </div>
-  </div>
-  <script src=./app.js></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>

@@ -1,105 +1,128 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-@media screen and (max-width:559px) { 
-  .title{
-    margin: 70px 0 30px 0;
-    text-align: center;
-    font-size: 2.5em;
-  }
+#container {
+  width: 80vw;
+  margin: 0 auto;
+}
 
-  .box-area{
-    display: grid;
-    grid-template-rows: repeat(3,100px);
-    grid-template-columns: repeat(3,100px);
-    justify-content: center;
+@media screen and (max-width: 559px) {
+  .title {
+    font-size: 40px;
+    margin: 40px auto;
+    text-align: center;
+    font-weight: 200;
   }
-  
-  .box{
-    border: solid .5px silver;
+  .box-area {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (100px)[3];
+        grid-template-rows: repeat(3, 100px);
+    -ms-grid-columns: (100px)[3];
+        grid-template-columns: repeat(3, 100px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .box-area__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 4px;
     background-color: #eee;
-    margin: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: solid 0.5px silver;
   }
-
-  .score-area{
-    position: relative;
-    left: 15vw;
-    font-size: 1.2em;
-    margin: 30px 0;
+  .score-area {
+    padding: 24px 32px;
   }
-
-  .score{
-    font-size: 1.2em;
+  .score-area__title {
+    font-size: 32px;
+    font-weight: 200;
+  }
+  .score-area__count {
+    font-size: 24px;
+  }
+  .score-area__resetBtn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 8px;
     text-transform: uppercase;
   }
-
-  #reset {
-    border-radius: 10px;
-    padding: 0 10px;
-    margin: 1vh;
-    text-transform: uppercase;
+  .score-area__mess {
+    text-align: center;
+    margin: 8px;
   }
 }
 
-@media screen and (min-width:560px) {
-  .title{
-    margin: 100px 0 40px 0;
+@media screen and (min-width: 560px) {
+  .title {
+    font-size: 48px;
+    margin: 40px auto;
     text-align: center;
-    font-size: 4em;
+    font-weight: 200;
   }
-
-  #container{
-    display: flex;
-    justify-content: center;
-  }
-
-  .box-area{
+  .box-area {
+    display: -ms-grid;
     display: grid;
-    grid-template-rows: repeat(3,130px);
-    grid-template-columns: repeat(3,130px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-rows: (130px)[3];
+        grid-template-rows: repeat(3, 130px);
+    -ms-grid-columns: (130px)[3];
+        grid-template-columns: repeat(3, 130px);
   }
-  
-  .box {
-    border: solid .5px silver;
+  .box-area__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: solid 0.5px silver;
     background-color: #eee;
     margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  
-  .score-area{
-    margin: 0 8vw;
+  .score-area {
+    margin: 0 auto;
+    padding: 24px 32px;
+    width: 20vw;
   }
-  
-  .score {
-    font-size: 3em;
-    text-transform: uppercase;
-    margin: 1vh 0;
+  .score-area__title {
+    font-size: 32px;
+    font-weight: 200;
   }
-  
-  .count {
-    font-size: 2em;
-    margin: 1vh 0;
+  .score-area__count {
+    font-size: 24px;
   }
-  
-  #reset {
-    font-size: 1.4em;
-    border-radius: 10px;
-    padding: 0 10px;
-    margin: 1vh 0;
+  .score-area__resetBtn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 8px;
+    border: none;
     text-transform: uppercase;
   }
-
-  #reset:hover{
-    transition: .2s;
+  .score-area__resetBtn:hover {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
     color: #fff;
-    background-color: rgba(10,132,255,.4);
+    background-color: rgba(10, 132, 255, 0.4);
+  }
+  .score-area__mess {
+    text-align: center;
+    font-size: 32px;
+    margin: 8px;
   }
 }
+/*# sourceMappingURL=style.css.map */
