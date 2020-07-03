@@ -43,46 +43,46 @@ for (let i = 0; i < box.length; i++) {
   box[i].addEventListener("click", () => {
     switch (i) {
       case 0:
-        sColor([0, 1, 3]);
+        switchColor([0, 1, 3]);
         break;
 
       case 1:
-        sColor([0, 1, 2, 4]);
+        switchColor([0, 1, 2, 4]);
         break;
 
       case 2:
-        sColor([1, 2, 5]);
+        switchColor([1, 2, 5]);
         break;
 
       case 3:
-        sColor([0, 3, 4, 6]);
+        switchColor([0, 3, 4, 6]);
         break;
 
       case 4:
-        sColor([1, 3, 4, 5, 7]);
+        switchColor([1, 3, 4, 5, 7]);
         break;
 
       case 5:
-        sColor([2, 4, 5, 8]);
+        switchColor([2, 4, 5, 8]);
         break;
 
       case 6:
-        sColor([3, 6, 7]);
+        switchColor([3, 6, 7]);
         break;
 
       case 7:
-        sColor([4, 6, 7, 8]);
+        switchColor([4, 6, 7, 8]);
         break;
 
       case 8:
-        sColor([5, 7, 8]);
+        switchColor([5, 7, 8]);
         break;
     }
   });
 }
 
 /* Switch Color and Check */
-function sColor(n) {
+function switchColor(n) {
   for (let i = 0; i < n.length; i++) {
     if (!flag[n[i]]) {
       box[n[i]].style.backgroundColor = "red";
@@ -102,7 +102,7 @@ function clickCount() {
     timer();
   }
   click_cnt++;
-  counter.innerHTML = "count : " + click_cnt;
+  counter.textContent = "count : " + click_cnt;
 }
 
 /* 時間計測 */
@@ -110,7 +110,7 @@ function timer() {
   const date = new Date(Date.now() - startTime);
   const min = String(date.getMinutes()).padStart(2, "0");
   const sec = String(date.getSeconds()).padStart(2, "0");
-  time.innerHTML = "Time : " + min + ":" + sec;
+  time.textContent = "Time : " + min + ":" + sec;
   timeoutId = setTimeout(() => {
     timer();
   }, 10);
@@ -121,7 +121,7 @@ function game() {
   for (let i = 0; i < box.length; i++) {
     flag[i] ? red_cnt++ : "";
     if (red_cnt === 9) {
-      clear_mess.innerHTML = "GAME CLEAR";
+      clear_mess.textContent = "GAME CLEAR";
       clearTimeout(timeoutId);
     }
   }
@@ -135,7 +135,7 @@ reset.addEventListener("click", () => {
   randomColor();
   red_cnt = 0;
   click_cnt = 0;
-  clear_mess.innerHTML = "";
-  time.innerHTML = "Time : 00:00";
-  counter.innerHTML = "count : " + click_cnt;
+  clear_mess.textContent = "";
+  time.textContent = "Time : 00:00";
+  counter.textContent = "count : " + click_cnt;
 });
