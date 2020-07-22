@@ -4,8 +4,7 @@
 
 3x3 のパネルが用意されており、クリックすると周囲のマスがひっくり返る。
 
-<img src="https://img.shields.io/badge/PWA-brightgreen">
-<img src="https://img.shields.io/badge/Neumorphism-purple">
+<img src="https://img.shields.io/badge/PWA-brightgreen"> <img src="https://img.shields.io/badge/Neumorphism-purple">
 
 [LightsOut](https://taiga248.github.io/LightsOut/)
 
