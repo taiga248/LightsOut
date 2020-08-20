@@ -1,6 +1,6 @@
 {
-  "name": "LightsOut",
-  "short_name": "LightOut",
+  "name": "Lights Out",
+  "short_name": "Lights Out",
   "icons": [
     {
       "src": "./icons/128.png",
