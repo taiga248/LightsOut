@@ -1,6 +1,6 @@
 {
-  "name": "Lights Out",
-  "short_name": "Lights Out",
+  "name": "LightsOut",
+  "short_name": "LightsOut",
   "icons": [
     {
       "src": "./icons/128.png",
@@ -20,6 +20,6 @@
   ],
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#BBB",
+  "background_color": "#FFF",
   "theme_color": "#FFF"
 }

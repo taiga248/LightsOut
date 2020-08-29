@@ -12,11 +12,11 @@
 
     <meta name="twitter:creator" content="@En_358" />
     <title>LightsOut</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <div id="container">
+    <main id="container">
       <h1 class="title">Lights Out</h1>
       <div class="content">
         <section class="box-area">
@@ -38,14 +38,14 @@
           <p class="score-area__mess" id="clear_mess"></p>
         </section>
       </div>
-    </div>
+    </main>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./sw.js");
+          navigator.serviceWorker.register("js/sw.js");
         });
       }
     </script>
-    <script src="./app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
