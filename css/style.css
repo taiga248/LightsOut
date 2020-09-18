@@ -75,6 +75,7 @@ body {
     border: none;
     text-transform: uppercase;
     border-radius: 8px;
+    outline: none;
     background: linear-gradient(145deg, #ffffff, #dadade);
     -webkit-box-shadow: 5px 5px 13px #ceced2, -5px -5px 13px #ffffff;
             box-shadow: 5px 5px 13px #ceced2, -5px -5px 13px #ffffff;
@@ -167,6 +168,7 @@ body {
     border: none;
     text-transform: uppercase;
     border-radius: 8px;
+    outline: none;
     background: linear-gradient(145deg, #ffffff, #dadade);
     -webkit-box-shadow: 5px 5px 13px #ceced2, -5px -5px 13px #ffffff;
             box-shadow: 5px 5px 13px #ceced2, -5px -5px 13px #ffffff;
