@@ -101,7 +101,8 @@ const timer = () => {
   const date = new Date(Date.now() - startTime);
   const min = String(date.getMinutes()).padStart(2, "0");
   const sec = String(date.getSeconds()).padStart(2, "0");
-  time.textContent = "Time : " + min + ":" + sec;
+  const ms = String(date.getMilliseconds()).padStart(3, "00");
+  time.textContent = "Time : " + min + ":" + sec + "." + ms;
   timeoutId = setTimeout(() => {
     timer();
   }, 10);
@@ -133,6 +134,6 @@ reset.addEventListener("click", () => {
   red_cnt = 0;
   click_cnt = 0;
   clear_mess.textContent = "";
-  time.textContent = "Time : 00:00";
+  time.textContent = "Time : 00:00.000";
   counter.textContent = "Count : " + click_cnt;
 });
