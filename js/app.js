@@ -1,49 +1,64 @@
 "use strict";
-const zero = document.getElementById("box-0");
-const one = document.getElementById("box-1");
-const two = document.getElementById("box-2");
-const three = document.getElementById("box-3");
-const four = document.getElementById("box-4");
-const five = document.getElementById("box-5");
-const six = document.getElementById("box-6");
-const seven = document.getElementById("box-7");
-const eight = document.getElementById("box-8");
-const box = [zero, one, two, three, four, five, six, seven, eight];
 
 const clear_mess = document.getElementById("clear_mess");
-const counter = document.getElementById("count");
 const reset = document.getElementById("reset");
-const time = document.getElementById("time");
+const count = document.getElementById("js-count");
+const time = document.getElementById("js-time");
+const box_area = document.getElementById("js-box-area");
 
 let click_cnt = 0;
-let red_cnt = 0;
 let startTime;
 let timeoutId;
-let flag = [];
-let tf;
+const boxes = [];
 
-(function() {
-  randomColor();
-})();
+/**
+ * 3x3の箱を用意
+ * @return {void}
+ */
+const setBoxes = () => {
+  for (let i = 0; i < 9; i++) {
+    const div = document.createElement("div");
+    div.className = "box-area__item";
+    div.id = `box-${i}`;
+    box_area.appendChild(div);
 
-/* ランダム配置 */
-function randomColor() {
-  for (let i = 0; i < box.length; i++) {
-    Math.floor(Math.random() * 10) >= 5 ? (tf = true) : (tf = false);
-    flag.push(tf);
-    if (flag[i]) {
-      box[i].classList.remove("box-area__item--Active");
-      box[i].classList.add("box-area__item--disActive");
+    let _dom = document.getElementById(`box-${i}`);
+    boxes.push({
+      dom: _dom,
+      flag: false,
+    });
+  }
+};
+
+/**
+ * 箱の凹凸ランダム配置
+ * @return {void}
+ */
+function setBoxFlag() {
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].flag = Math.floor(Math.random() * 10) >= 5 ? true : false;
+    if (boxes[i].flag) {
+      boxes[i].dom.classList.remove("box-area__item--active");
+      boxes[i].dom.classList.add("box-area__item--inactive");
     } else {
-      box[i].classList.remove("box-area__item--disActive");
-      box[i].classList.add("box-area__item--Active");
+      boxes[i].dom.classList.remove("box-area__item--inactive");
+      boxes[i].dom.classList.add("box-area__item--active");
     }
   }
 }
 
+/**
+ * 最初に準備しちゃうよん
+ * @immediate
+ */
+(async () => {
+  await setBoxes();
+  await setBoxFlag();
+})();
+
 /* それぞれ押下された時の処理 */
-for (let i = 0; i < box.length; i++) {
-  box[i].addEventListener("click", () => {
+for (let i = 0; i < boxes.length; i++) {
+  boxes[i].dom.addEventListener("click", () => {
     switch (i) {
       case 0:
         switchColor([0, 1, 3]);
@@ -76,64 +91,76 @@ for (let i = 0; i < box.length; i++) {
   });
 }
 
-/* Switch Color and Check */
-const switchColor = around_item => {
-  for (let i = 0; i < around_item.length; i++) {
-    if (flag[around_item[i]]) {
-      box[around_item[i]].classList.remove("box-area__item--disActive");
-      box[around_item[i]].classList.add("box-area__item--Active");
+/**
+ * クリックマス+周囲マスを反転
+ * @param {number} targets
+ * @return {void}
+ */
+const switchColor = (targets) => {
+  for (let i = 0; i < targets.length; i++) {
+    if (boxes[targets[i]].flag) {
+      boxes[targets[i]].dom.classList.remove("box-area__item--inactive");
+      boxes[targets[i]].dom.classList.add("box-area__item--active");
     } else {
-      box[around_item[i]].classList.remove("box-area__item--Active");
-      box[around_item[i]].classList.add("box-area__item--disActive");
+      boxes[targets[i]].dom.classList.remove("box-area__item--active");
+      boxes[targets[i]].dom.classList.add("box-area__item--inactive");
     }
-    flag[around_item[i]] = !flag[around_item[i]];
+    boxes[targets[i]].flag = !boxes[targets[i]].flag;
   }
   if (click_cnt === 0) {
     startTime = Date.now();
     timer();
   }
-  clickCount();
+  click();
   game();
 };
 
-/* 時間計測 */
+/**
+ * 時間計測
+ * @return {void}
+ */
 const timer = () => {
   const date = new Date(Date.now() - startTime);
   const min = String(date.getMinutes()).padStart(2, "0");
   const sec = String(date.getSeconds()).padStart(2, "0");
   const ms = String(date.getMilliseconds()).padStart(3, "00");
-  time.textContent = "Time : " + min + ":" + sec + "." + ms;
+  time.textContent = `${min}:${sec}.${ms}`;
   timeoutId = setTimeout(() => {
     timer();
   }, 10);
 };
 
-/* 押下をカウント */
-const clickCount = () => {
+/**
+ * クリック数をカウント
+ * @return {void}
+ */
+const click = () => {
   click_cnt++;
-  counter.textContent = "Count : " + click_cnt;
+  count.textContent = click_cnt;
 };
 
-/* クリアしたかどうかの判定 */
+/**
+ * クリア判定
+ * 全てtrueだった場合クリア
+ * @return {void}
+ */
 const game = () => {
-  for (let i = 0; i < box.length; i++) {
-    flag[i] ? red_cnt++ : "";
-    if (red_cnt === 9) {
-      clear_mess.textContent = "GAME CLEAR";
-      clearTimeout(timeoutId);
-    }
-  }
-  red_cnt = 0;
+  const result = boxes.find((box) => !box.flag);
+  if (result) return;
+
+  clear_mess.textContent = "GAME CLEAR";
+  clearTimeout(timeoutId);
 };
 
-/* リセット処理 */
+/**
+ * 各値リセット
+ * @return {void}
+ */
 reset.addEventListener("click", () => {
   clearTimeout(timeoutId);
-  flag = [];
-  randomColor();
-  red_cnt = 0;
+  setBoxFlag();
   click_cnt = 0;
   clear_mess.textContent = "";
-  time.textContent = "Time : 00:00.000";
-  counter.textContent = "Count : " + click_cnt;
+  time.textContent = `00:00.000`;
+  count.textContent = 0;
 });
