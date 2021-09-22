@@ -9,36 +9,28 @@
       name="twitter:image"
       content="https://raw.githubusercontent.com/taiga248/LightsOut/master/icons/assets/demo.png"
     />
-
     <meta name="twitter:creator" content="@En_358" />
     <title>LightsOut</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <main id="container">
+    <div id="container">
       <h1 class="title">Lights Out</h1>
       <div class="content">
-        <section class="box-area">
-          <div class="box-area__item" id="box-0"></div>
-          <div class="box-area__item" id="box-1"></div>
-          <div class="box-area__item" id="box-2"></div>
-          <div class="box-area__item" id="box-3"></div>
-          <div class="box-area__item" id="box-4"></div>
-          <div class="box-area__item" id="box-5"></div>
-          <div class="box-area__item" id="box-6"></div>
-          <div class="box-area__item" id="box-7"></div>
-          <div class="box-area__item" id="box-8"></div>
-        </section>
-        <section class="score-area">
+        <div class="box-area" id="js-box-area"></div>
+
+        <div class="score-area">
           <h2 class="score-area__title">Score</h2>
-          <p class="score-area__count" id="time">Time : 00:00.000</p>
-          <p class="score-area__count" id="count">Count : 0</p>
+          <p class="score-area__count">
+            Time : <span id="js-time">00:00.000</span>
+          </p>
+          <p class="score-area__count">Count : <span id="js-count">0</span></p>
           <button class="score-area__resetBtn" id="reset">reset</button>
           <p class="score-area__mess" id="clear_mess"></p>
-        </section>
+        </div>
       </div>
-    </main>
+    </div>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
