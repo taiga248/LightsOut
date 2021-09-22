@@ -30,11 +30,11 @@ $scoreWidth: 300px;
       justify-content: center;
       border-radius: 17px;
       margin: 8px;
-      &--Active {
+      &--active {
         background: #eee;
         box-shadow: inset 12px 12px 33px #aeaeae, inset -12px -12px 33px #ffffff;
       }
-      &--disActive {
+      &--inactive {
         background: linear-gradient(145deg, #ffffff, #d6d6d6);
         box-shadow: 12px 12px 33px #aeaeae, -12px -12px 33px #ffffff;
       }
@@ -103,11 +103,11 @@ $scoreWidth: 300px;
       justify-content: center;
       margin: 8px;
       border-radius: 17px;
-      &--Active {
+      &--active {
         background: #eee;
         box-shadow: inset 12px 12px 33px #aeaeae, inset -12px -12px 33px #ffffff;
       }
-      &--disActive {
+      &--inactive {
         background: linear-gradient(145deg, #ffffff, #d6d6d6);
         box-shadow: 12px 12px 33px #aeaeae, -12px -12px 33px #ffffff;
       }
